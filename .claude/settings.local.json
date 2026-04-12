@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__d20e31af-91e9-45bd-9251-b09dcfa07833__use_figma",
+      "mcp__f55f9210-b0bc-4469-ace5-fd7cee91f9d7__resolve-library-id",
+      "Bash(npx tsc:*)",
+      "Bash(npx vitest:*)",
+      "WebFetch(domain:www.figma.com)",
+      "mcp__mcp-registry__search_mcp_registry",
+      "WebFetch(domain:figma.com)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

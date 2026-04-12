@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "experience": "Experience",
+    "contact": "Contact",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Lead Frontend Developer",
+    "title": "Lead Frontend Engineer",
+    "summary": "Building complex product interfaces, architecture, and frontend teams.",
+    "ctaPrimary": "View portfolio",
+    "ctaSecondary": "Contact",
+    "contacts": "Contacts",
+    "points": [
+      {
+        "label": "Frontend Leadership",
+        "description": "Leading teams of 3-7 engineers, managing delivery, architecture, and technical decisions."
+      },
+      {
+        "label": "Product Architecture",
+        "description": "Designing scalable frontend systems for complex business domains."
+      },
+      {
+        "label": "Complex Interfaces",
+        "description": "Shipping logistics dashboards, CRM platforms, SEO tooling, and data-heavy products."
+      },
+      {
+        "label": "Delivery Ownership",
+        "description": "End-to-end responsibility from decomposition to production."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Selected work",
+    "description": "Public case studies, platform work, and shipped product systems.",
+    "featured": "Featured projects",
+    "viewAll": "View All Projects",
+    "live": "Live"
+  },
+  "experience": {
+    "title": "Experience timeline",
+    "description": "From mid-level delivery to lead ownership across SaaS, logistics, insurance, and commerce."
+  },
+  "contact": {
+    "title": "Start a conversation",
+    "description": "For product work, frontend leadership, architecture, and platform delivery.",
+    "availabilityTitle": "Availability",
+    "availabilityStatus": "Open to opportunities",
+    "availabilityDetails": "Lead frontend roles, complex product work, architecture reviews, and delivery consulting.",
+    "reachTitle": "Get in touch",
+    "locationTitle": "Location & work",
+    "locationLabel": "Location",
+    "location": "Remote / Europe",
+    "timezoneLabel": "Timezone",
+    "timezone": "CET / UTC+1",
+    "languagesLabel": "Languages",
+    "languages": "English, Russian",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent.",
+    "error": "Unable to send message right now."
+  },
+  "footer": {
+    "summary": "Lead frontend portfolio focused on architecture, delivery ownership, reusable product systems, and operational interfaces.",
+    "role": "Lead Frontend Engineer",
+    "email": "Email",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "website": "Website",
+    "message": "Message",
+    "invalidValue": "Invalid value",
+    "requiredName": "Name is required.",
+    "shortName": "Name is too short.",
+    "requiredEmail": "Email is required.",
+    "requiredMessage": "Message is required.",
+    "shortMessage": "Message should be more detailed."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The requested page does not exist or the locale/slug pair is invalid.",
+    "backHome": "Back to home"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "seo": {
+    "siteTitle": "Aleksandr Ivanov | Lead Frontend Developer",
+    "siteDescription": "Bilingual portfolio and CV with case studies on SaaS platforms, logistics systems, frontend architecture, and delivery leadership."
+  }
+}

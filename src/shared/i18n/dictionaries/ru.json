@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "home": "Главная",
+    "portfolio": "Портфолио",
+    "experience": "Опыт",
+    "contact": "Контакты",
+    "skipToContent": "Перейти к содержимому"
+  },
+  "hero": {
+    "eyebrow": "Lead Frontend Developer",
+    "title": "Лид фронтенд-разработчик",
+    "summary": "Разработка сложных продуктовых интерфейсов, архитектура и управление командами.",
+    "ctaPrimary": "Открыть портфолио",
+    "ctaSecondary": "Контакты",
+    "contacts": "Контакты",
+    "points": [
+      {
+        "label": "Управление командами",
+        "description": "Руководство командами из 3-5 инженеров, управление поставками и архитектурными решениями."
+      },
+      {
+        "label": "Продуктовая архитектура",
+        "description": "Проектирование масштабируемых фронтенд-систем для сложных бизнес-доменов."
+      },
+      {
+        "label": "Сложные интерфейсы",
+        "description": "Логистические дашборды, CRM-платформы, SEO-инструменты и продукты с большими объемами данных."
+      },
+      {
+        "label": "Владение поставкой",
+        "description": "Полная ответственность от декомпозиции до production."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Избранные проекты",
+    "description": "Публичные кейсы, платформенные проекты и shipped product systems.",
+    "featured": "Главные проекты",
+    "viewAll": "Все проекты",
+    "live": "В работе"
+  },
+  "experience": {
+    "title": "Опыт",
+    "description": "От middle delivery до lead ownership в SaaS, логистике, страховании и commerce."
+  },
+  "contact": {
+    "title": "Связаться со мной",
+    "description": "По вопросам продукта, frontend leadership, архитектуры и platform delivery.",
+    "availabilityTitle": "Доступность",
+    "availabilityStatus": "Открыт к предложениям",
+    "availabilityDetails": "Lead frontend роли, сложная продуктовая работа, архитектурные ревью и delivery-консалтинг.",
+    "reachTitle": "Связаться",
+    "locationTitle": "Локация и работа",
+    "locationLabel": "Локация",
+    "location": "Удалённо / Европа",
+    "timezoneLabel": "Часовой пояс",
+    "timezone": "CET / UTC+1",
+    "languagesLabel": "Языки",
+    "languages": "Английский, русский",
+    "submit": "Отправить",
+    "sending": "Отправка...",
+    "success": "Сообщение отправлено.",
+    "error": "Сейчас не удалось отправить сообщение."
+  },
+  "footer": {
+    "summary": "Портфолио lead frontend разработчика с фокусом на архитектуру, delivery ownership, переиспользуемые продуктовые системы и операционные интерфейсы.",
+    "role": "Lead Frontend Engineer",
+    "email": "Почта",
+    "telegram": "Телеграм",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "form": {
+    "name": "Имя",
+    "email": "Email",
+    "company": "Компания",
+    "website": "Сайт",
+    "message": "Сообщение",
+    "invalidValue": "Некорректное значение",
+    "requiredName": "Введите имя.",
+    "shortName": "Имя слишком короткое.",
+    "requiredEmail": "Введите email.",
+    "requiredMessage": "Введите сообщение.",
+    "shortMessage": "Сообщение должно быть подробнее."
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "description": "Запрошенная страница не существует или комбинация локали и slug некорректна.",
+    "backHome": "На главную"
+  },
+  "theme": {
+    "label": "Тема",
+    "light": "Светлая",
+    "dark": "Тёмная"
+  },
+  "seo": {
+    "siteTitle": "Александр Иванов | Lead Frontend Developer",
+    "siteDescription": "Двуязычное портфолио и CV с кейсами про SaaS-платформы, логистические системы, frontend-архитектуру и delivery leadership."
+  }
+}

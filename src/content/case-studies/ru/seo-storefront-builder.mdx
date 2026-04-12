@@ -1,0 +1,45 @@
+export const metadata = {
+  slug: "seo-storefront-builder",
+  locale: "ru",
+  title: "SEO Storefront Builder",
+  summary:
+    "Frontend- и SEO-автоматизация в конструкторе storefront-страниц на данных внутренних систем и GraphQL.",
+  excerpt:
+    "Кейс про автоматическую metadata generation, Open Graph и динамическую product structured data в генерируемом storefront-сценарии.",
+  publishedAt: "2023-09-01",
+  featured: true,
+  tags: ["GraphQL", "Apollo", "SEO", "Structured Data"],
+  roles: ["Frontend Developer"],
+  cover: {
+    src: "/images/case-studies/seo-storefront-builder.png",
+    alt: "Интерфейс конструктора магазинов с витриной и управлением товарами",
+    width: 2050,
+    height: 770
+  },
+  seo: {
+    title: "Кейс о SEO storefront builder",
+    description:
+      "GraphQL-driven конструктор storefront-страниц с автоматической metadata generation, Open Graph и динамической product structured data."
+  }
+};
+
+## Контекст
+
+Интересный момент в этом проекте был не в одной конкретной storefront-странице, а в самом конструкторе. Он генерировал страницы на основе внутренних товарных данных, поэтому SEO здесь было не ручной задачей “страница за страницей”, а системной задачей.
+
+## Над чем работал
+
+- над интерфейсами продукта
+- над GraphQL и Apollo-частью
+- над логикой генерации SEO-слоя
+
+## SEO-слой
+
+- автоматическая генерация metadata
+- формирование Open Graph
+- частичная реализация динамической e-commerce structured data
+- прямое использование товарной информации из внутренних систем как источника для markup
+
+## Почему это важно
+
+Смысл был в том, чтобы уменьшить ручную SEO-работу. Если данные о товаре уже существуют во внутренних системах и используются в storefront-карточках, то эти же данные должны питать и markup-слой. Это делало конструктор масштабируемее и сокращало необходимость ручного заполнения.

@@ -1,0 +1,298 @@
+person:
+  full_name: "Aleksandr Ivanov"
+  base_location: "Belgrade, Serbia"
+  target_title: "Lead Frontend Developer"
+  seniority:
+    current: "lead"
+    progression:
+      - company: "SprintF"
+        stages:
+          - level: "middle"
+            projects:
+              - "store builder"
+              - "mortgage insurance"
+          - level: "senior"
+            projects:
+              - "auto parts legacy support"
+              - "other non-lead SprintF work"
+          - level: "lead"
+            projects:
+              - "sea freight"
+              - "POS lending"
+
+positioning:
+  short: "Lead frontend engineer focused on architecture, delivery ownership, product-critical systems, and team leadership."
+  strengths:
+    - "frontend architecture"
+    - "delivery ownership"
+    - "technical leadership"
+    - "team coordination"
+    - "hiring and interviews"
+    - "legacy modernization"
+    - "greenfield product setup"
+    - "SEO-aware frontend systems"
+    - "GraphQL and Apollo"
+    - "Nuxt and Vue ecosystem"
+    - "React and Redux ecosystem"
+    - "real-time product features"
+    - "SaaS and internal tools"
+
+public_rules:
+  company_reference_for_current_work: "Group Collective"
+  current_platform_label: "CPA network platform"
+  current_product_reference: "A white-label CPA network platform that can be deployed behind different brand names and landing pages."
+  avoid_reference_checks: true
+  anonymize_where_relationship_sensitive: true
+  hide_sensitive_project_names_in_public_screenshots: true
+
+timeline:
+  - id: "freelance"
+    company_label: "Freelance"
+    role: "Frontend Developer"
+    start: "2019-01"
+    end: "2021-06"
+    confidence: "medium"
+  - id: "sprintf"
+    company_label: "SprintF"
+    role: "Senior Frontend Developer / Frontend Team Lead depending on project"
+    start: "2020-07"
+    end: "2024-07"
+    confidence: "high"
+  - id: "altessa"
+    company_label: "Altessa"
+    role: "Frontend Developer"
+    start: "2022-04"
+    end: "2022-10"
+    confidence: "medium"
+  - id: "linkbuilder"
+    company_label: "Codiny / LinkBuilder context"
+    role: "Senior Frontend Developer"
+    start: "2023-12"
+    end: "2024-03"
+    confidence: "medium"
+  - id: "group_collective"
+    company_label: "Group Collective"
+    role: "Lead Frontend Developer"
+    start: "2024-08"
+    end: "2026-02"
+    confidence: "medium"
+
+projects:
+  - id: "group-collective-cpa-platform"
+    public_name: "CPA Network Platform"
+    public_company: "Group Collective"
+    visibility: "public"
+    type: "core-platform"
+    level: "lead"
+    stack:
+      - "Nuxt"
+      - "Vue"
+      - "Pinia"
+      - "Vite"
+      - "TypeScript"
+      - "WebSockets"
+      - "Centrifugo"
+    team:
+      frontend_engineers: 3
+      role_scope: "managed frontend development"
+    responsibilities:
+      - "architecture design"
+      - "task decomposition"
+      - "task distribution"
+      - "delivery coordination"
+      - "hands-on development"
+    outcomes:
+      - "optimized the core SaaS product"
+      - "supported a reusable white-label platform model"
+      - "implemented real-time functionality"
+    evidence:
+      - "public site traces"
+      - "resume"
+
+  - id: "group-collective-crm"
+    public_name: "Affiliate Manager CRM"
+    public_company: "Group Collective"
+    visibility: "public"
+    type: "internal-product"
+    level: "lead"
+    stage: "mvp"
+    responsibilities:
+      - "frontend leadership"
+      - "product shaping"
+      - "messenger integration support"
+    workflows:
+      - "client communication"
+      - "moving leads through the funnel"
+
+  - id: "sprintf-sea-freight"
+    public_name: "Maritime Logistics Platform"
+    public_company: "Anonymized product company"
+    visibility: "public-anonymized"
+    type: "b2b-logistics"
+    level: "lead"
+    stack:
+      - "React 18"
+      - "Redux Toolkit"
+      - "TypeScript"
+    team:
+      frontend_engineers: 3
+      role_scope: "frontend team lead"
+      reporting_line:
+        - "PM"
+        - "business representative"
+        - "backend team lead"
+    responsibilities:
+      - "frontend ownership"
+      - "architecture decisions"
+      - "cross-team communication"
+      - "interviews and team formation"
+      - "API contract collaboration"
+    workflows:
+      - "route planning"
+      - "reporting"
+      - "planned-vs-actual discrepancy views"
+      - "vessel map display"
+    usage:
+      - "multiple departments"
+      - "multiple offices"
+
+  - id: "sprintf-pos-lending"
+    public_name: "POS Lending Platform"
+    public_company: "Anonymized product company"
+    visibility: "public-anonymized"
+    type: "fintech"
+    level: "lead"
+    stack:
+      - "React"
+      - "Redux Toolkit"
+    responsibilities:
+      - "startup architecture"
+      - "process setup"
+      - "domain-based frontend structure"
+      - "frontend interviews"
+    hiring:
+      approximate_interviews: 5
+    notes:
+      - "left shortly after project start"
+      - "included internal tooling such as mock Kazakh passport data generator"
+
+  - id: "sprintf-mortgage-insurance"
+    public_name: "Insurance Self-Service Product"
+    public_company: "Anonymized product company"
+    visibility: "public-anonymized"
+    type: "insurance"
+    level: "senior"
+    stack:
+      - "Nuxt 2"
+    responsibilities:
+      - "solo frontend maintenance"
+      - "refactoring"
+      - "feature support"
+      - "state optimization"
+    technical_changes:
+      - "extracted reusable components"
+      - "separated API layer from pages"
+      - "reduced codebase complexity"
+
+  - id: "sprintf-store-builder"
+    public_name: "Storefront Builder"
+    public_company: "Anonymized product company"
+    visibility: "public-anonymized"
+    type: "commerce-platform"
+    level: "middle"
+    stack:
+      - "Nuxt 2"
+      - "GraphQL"
+      - "Apollo"
+    responsibilities:
+      - "interface development"
+      - "SEO automation"
+      - "client-facing communication on some issues"
+    technical_changes:
+      - "auto-generated SEO markup"
+      - "auto-generated Open Graph data"
+      - "partially implemented dynamic e-commerce structured data"
+      - "used product data from internal systems as source for storefront markup"
+
+  - id: "sprintf-auto-parts"
+    public_name: "Legacy Internal Operations System"
+    public_company: "Anonymized product company"
+    visibility: "public-anonymized"
+    type: "legacy-support"
+    level: "senior"
+    notes:
+      - "small support project"
+      - "no standout outcomes worth emphasizing"
+
+  - id: "altessa-fix-fox"
+    public_name: "Workforce Time Tracking System"
+    public_company: "Anonymized delivery company"
+    visibility: "public-anonymized"
+    type: "hr-tech"
+    level: "frontend"
+    stack:
+      - "VueJS"
+    responsibilities:
+      - "frontend implementation"
+      - "delivery coordination"
+    public_facts:
+      - "QR-based attendance tracking"
+      - "timesheet export"
+      - "employee mobile app"
+      - "role-based access handling"
+    team:
+      actual_frontend_staffing: "Aleksandr plus one junior"
+
+  - id: "altessa-streaming-marketplace"
+    public_name: "Streaming Marketplace"
+    public_company: "Anonymized delivery company"
+    visibility: "public-anonymized"
+    type: "marketplace"
+    level: "frontend"
+    stack:
+      - "VueJS"
+      - "NuxtJS"
+      - "Golang"
+      - "Swift"
+      - "Kotlin"
+    responsibilities:
+      - "greenfield frontend work"
+      - "technology selection"
+      - "delivery ownership"
+    public_facts:
+      - "supports physical and digital goods"
+      - "multi-role product accounts"
+      - "microservice architecture"
+    team:
+      actual_frontend_staffing: "Aleksandr plus one junior"
+    screenshot_rule: "hide project name in public materials"
+
+  - id: "linkbuilder-modernization"
+    public_name: "SEO Platform Modernization"
+    public_company: "Anonymized product company"
+    visibility: "public-anonymized"
+    type: "seo-saas"
+    level: "senior"
+    stack:
+      - "Vue 3"
+      - "Vite"
+      - "Vuex or store layer"
+      - "Vue Router"
+      - "Tailwind CSS"
+    responsibilities:
+      - "frontend modernization"
+      - "architecture redesign"
+      - "API extraction"
+      - "testing setup"
+      - "code review"
+      - "mentoring"
+    technical_changes:
+      - "migrated from Vue 2 to Vue 3"
+      - "built frontend separately from monolith"
+      - "moved data access behind dedicated APIs"
+      - "project was paused, allowing careful rebuild"
+
+unknowns:
+  - "exact measurable metrics across projects"
+  - "exact public-safe wording for some employers and products"
+  - "some timeline overlaps still need final normalization"
