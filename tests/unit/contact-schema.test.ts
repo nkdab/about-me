@@ -10,7 +10,7 @@ describe("contactSchema", () => {
       locale: "en",
       message: "This is a detailed enough message for the validator.",
       name: "Alex",
-      website: ""
+      website: "",
     });
 
     expect(parsed.success).toBe(true);
@@ -22,7 +22,7 @@ describe("contactSchema", () => {
       email: "alex@example.com",
       locale: "en",
       message: "short",
-      name: "Alex"
+      name: "Alex",
     });
 
     expect(parsed.success).toBe(false);

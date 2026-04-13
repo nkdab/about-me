@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import {
   getAllProjectSlugs,
-  getCaseStudyBySlug
+  getCaseStudyBySlug,
 } from "@/entities/project/model/queries";
 import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { buildPageMetadata } from "@/shared/lib/seo/metadata";
@@ -13,12 +13,12 @@ export async function generateStaticParams() {
   const slugs = await getAllProjectSlugs();
   return [
     ...slugs.map((slug) => ({ locale: "en", slug })),
-    ...slugs.map((slug) => ({ locale: "ru", slug }))
+    ...slugs.map((slug) => ({ locale: "ru", slug })),
   ];
 }
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
@@ -35,12 +35,12 @@ export async function generateMetadata({
       caseStudy.frontmatter.seo?.description ?? caseStudy.frontmatter.summary,
     locale,
     pathname: `/portfolio/${slug}`,
-    title: caseStudy.frontmatter.seo?.title ?? caseStudy.frontmatter.title
+    title: caseStudy.frontmatter.seo?.title ?? caseStudy.frontmatter.title,
   });
 }
 
 export default async function CaseStudyPage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
@@ -55,7 +55,10 @@ export default async function CaseStudyPage({
 
   return (
     <>
-      <CaseStudyHeader dictionary={dictionary} frontmatter={caseStudy.frontmatter} />
+      <CaseStudyHeader
+        dictionary={dictionary}
+        frontmatter={caseStudy.frontmatter}
+      />
       <CaseStudyBody Component={caseStudy.Component} />
     </>
   );

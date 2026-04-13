@@ -3,14 +3,17 @@ import Image from "next/image";
 import type { ElementType } from "react";
 import type { Locale } from "@/shared/config/locales";
 import type { Dictionary } from "@/shared/i18n/get-dictionary";
-import type { CaseStudyFrontmatter, PortfolioItem } from "@/entities/project/model/types";
+import type {
+  CaseStudyFrontmatter,
+  PortfolioItem,
+} from "@/entities/project/model/types";
 
 export function ProjectCard({
   item,
   frontmatter,
   locale,
   dictionary,
-  headingLevel = "h3"
+  headingLevel = "h3",
 }: {
   item: PortfolioItem;
   frontmatter?: CaseStudyFrontmatter;
@@ -40,7 +43,9 @@ export function ProjectCard({
           <Heading className="card-title transition-colors group-hover:text-[var(--accent)]">
             {title}
           </Heading>
-          <span className="shrink-0 text-sm text-[var(--muted)]">{item.year}</span>
+          <span className="shrink-0 text-sm text-[var(--muted)]">
+            {item.year}
+          </span>
         </div>
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
           {item.status === "live" ? dictionary.portfolio.live : item.status}

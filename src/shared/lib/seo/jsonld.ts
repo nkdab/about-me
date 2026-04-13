@@ -7,6 +7,6 @@ export function personJsonLd() {
     description: siteConfig.description,
     name: siteConfig.name,
     sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.telegram],
-    url: siteConfig.url
+    url: siteConfig.url,
   };
 }

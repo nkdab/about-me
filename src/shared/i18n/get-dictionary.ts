@@ -6,6 +6,8 @@ const dictionaries = { en, ru };
 
 export type Dictionary = typeof en;
 
-export async function getDictionary(locale: string | undefined): Promise<Dictionary> {
+export async function getDictionary(
+  locale: string | undefined,
+): Promise<Dictionary> {
   return dictionaries[resolveLocale(locale)];
 }

@@ -15,7 +15,7 @@ function applyTheme(theme: ThemePreference) {
 
 export function ThemeSwitcher({
   dictionary,
-  initialTheme
+  initialTheme,
 }: {
   dictionary: Dictionary;
   initialTheme: ThemePreference;
@@ -35,7 +35,8 @@ export function ThemeSwitcher({
 
   const nextTheme = theme === "light" ? "dark" : "light";
   const Icon = theme === "light" ? Moon : Sun;
-  const label = theme === "light" ? dictionary.theme.dark : dictionary.theme.light;
+  const label =
+    theme === "light" ? dictionary.theme.dark : dictionary.theme.light;
 
   return (
     <button

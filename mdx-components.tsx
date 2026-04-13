@@ -20,7 +20,12 @@ const components: MDXComponents = {
       {...props}
     />
   ),
-  ul: (props) => <ul className="mt-5 list-disc space-y-2 pl-6 text-[var(--muted)]" {...props} />
+  ul: (props) => (
+    <ul
+      className="mt-5 list-disc space-y-2 pl-6 text-[var(--muted)]"
+      {...props}
+    />
+  ),
 };
 
 export function useMDXComponents(): MDXComponents {

@@ -4,7 +4,7 @@ import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { resolveLocale } from "@/shared/config/locales";
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -16,12 +16,12 @@ export async function generateMetadata({
     description: dictionary.contact.description,
     locale,
     pathname: "/contact",
-    title: dictionary.contact.title
+    title: dictionary.contact.title,
   });
 }
 
 export default async function ContactPage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -29,5 +29,7 @@ export default async function ContactPage({
   const locale = resolveLocale(rawLocale);
   const dictionary = await getDictionary(locale);
 
-  return <ContactSection dictionary={dictionary} headingLevel="h1" locale={locale} />;
+  return (
+    <ContactSection dictionary={dictionary} headingLevel="h1" locale={locale} />
+  );
 }

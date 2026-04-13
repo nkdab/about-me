@@ -2,7 +2,7 @@ import { type Locale, defaultLocale, isLocale } from "@/shared/config/locales";
 
 export function getLocalePath({
   pathname,
-  targetLocale
+  targetLocale,
 }: {
   pathname: string;
   targetLocale: Locale;

@@ -1,6 +1,6 @@
 export async function verifyCaptcha(
   token: string,
-  remoteIp?: string
+  remoteIp?: string,
 ): Promise<boolean> {
   const secret = process.env.HCAPTCHA_SECRET;
 
@@ -10,7 +10,7 @@ export async function verifyCaptcha(
 
   const params = new URLSearchParams({
     response: token,
-    secret
+    secret,
   });
 
   if (remoteIp) {
@@ -21,9 +21,9 @@ export async function verifyCaptcha(
     body: params.toString(),
     cache: "no-store",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    method: "POST"
+    method: "POST",
   });
 
   if (!response.ok) {

@@ -49,10 +49,7 @@ export function SiteHeader({
         </nav>
         <div className="hidden items-center gap-3 border-l border-[var(--border)] pl-6 md:flex md:justify-end">
           <LocaleSwitcher locale={locale} />
-          <ThemeSwitcher
-            dictionary={dictionary}
-            initialTheme={initialTheme}
-          />
+          <ThemeSwitcher dictionary={dictionary} initialTheme={initialTheme} />
         </div>
       </div>
     </header>

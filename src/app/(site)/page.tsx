@@ -8,7 +8,7 @@ export default async function RootRedirectPage() {
   const headerStore = await headers();
   const locale = detectLocale(
     cookieStore.get(localeCookieName)?.value,
-    headerStore.get("accept-language")
+    headerStore.get("accept-language"),
   );
 
   redirect(`/${locale}`);

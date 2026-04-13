@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       allow: "/",
-      userAgent: "*"
+      userAgent: "*",
     },
-    sitemap: `${siteConfig.url}/sitemap.xml`
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }

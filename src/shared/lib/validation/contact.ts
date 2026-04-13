@@ -7,7 +7,7 @@ export const contactSchema = z.object({
   locale: z.enum(["en", "ru"]),
   message: z.string().min(20).max(4000),
   name: z.string().min(2).max(80),
-  website: z.string().max(120).optional().or(z.literal(""))
+  website: z.string().max(120).optional().or(z.literal("")),
 });
 
 export type ContactFormInput = z.infer<typeof contactSchema>;

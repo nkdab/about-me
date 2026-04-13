@@ -16,7 +16,9 @@ import {
 import { submitContact } from "@/features/send-contact-form/model/submit-contact";
 
 function getErrorMessage(value: unknown) {
-  if (typeof value === "string") {return value;}
+  if (typeof value === "string") {
+    return value;
+  }
   return value instanceof Error ? value.message : undefined;
 }
 

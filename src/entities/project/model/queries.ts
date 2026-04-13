@@ -1,11 +1,8 @@
 import { portfolioItems } from "@/data/portfolio";
-import type {
-  CaseStudy,
-  PortfolioItem
-} from "@/entities/project/model/types";
+import type { CaseStudy, PortfolioItem } from "@/entities/project/model/types";
 import {
   getCaseStudyImporter,
-  getRegisteredProjectSlugs
+  getRegisteredProjectSlugs,
 } from "@/entities/project/model/registry";
 import { type Locale, locales } from "@/shared/config/locales";
 
@@ -18,8 +15,8 @@ export async function getFeaturedProjects(locale: Locale) {
   return getPortfolioItems().filter((item) =>
     cases.some(
       (entry) =>
-        entry.frontmatter.slug === item.slug && entry.frontmatter.featured
-    )
+        entry.frontmatter.slug === item.slug && entry.frontmatter.featured,
+    ),
   );
 }
 
@@ -29,7 +26,7 @@ export async function getAllProjectSlugs(): Promise<string[]> {
 
 export async function getCaseStudyBySlug(
   locale: Locale,
-  slug: string
+  slug: string,
 ): Promise<CaseStudy | null> {
   const importer = getCaseStudyImporter(locale, slug);
 
@@ -45,14 +42,14 @@ export async function getCaseStudyBySlug(
 
   return {
     Component: module.default,
-    frontmatter: module.metadata
+    frontmatter: module.metadata,
   };
 }
 
 export async function getAllCaseStudies(locale: Locale): Promise<CaseStudy[]> {
   const slugs = await getAllProjectSlugs();
   const result = await Promise.all(
-    slugs.map((slug) => getCaseStudyBySlug(locale, slug))
+    slugs.map((slug) => getCaseStudyBySlug(locale, slug)),
   );
   return result.filter((entry): entry is CaseStudy => Boolean(entry));
 }
@@ -61,8 +58,8 @@ export async function getProjectAlternates(slug: string) {
   const result = await Promise.all(
     locales.map(async (locale) => ({
       caseStudy: await getCaseStudyBySlug(locale, slug),
-      locale
-    }))
+      locale,
+    })),
   );
 
   return result.filter((entry) => entry.caseStudy !== null);

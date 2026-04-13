@@ -6,17 +6,18 @@ import { Button } from "@/shared/ui/button";
 
 export function Hero({
   dictionary,
-  locale
+  locale,
 }: {
   dictionary: Dictionary;
   locale: Locale;
 }) {
   return (
-    <section aria-label={dictionary.hero.title} className="page-container flex min-h-[85vh] items-center pb-16 pt-44 md:pb-24 md:pt-40">
+    <section
+      aria-label={dictionary.hero.title}
+      className="page-container flex min-h-[85vh] items-center pb-16 pt-44 md:pb-24 md:pt-40"
+    >
       <div className="max-w-[900px]">
-        <h1 className="display-title">
-          {dictionary.hero.title}
-        </h1>
+        <h1 className="display-title">{dictionary.hero.title}</h1>
         <p className="mt-6 max-w-[44rem] text-xl leading-9 text-[var(--muted)] md:text-2xl md:leading-10">
           {dictionary.hero.summary}
         </p>

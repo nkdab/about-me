@@ -7,7 +7,7 @@ import type { PortfolioItem } from "@/entities/project/model/types";
 export async function PortfolioGrid({
   locale,
   items,
-  dictionary
+  dictionary,
 }: {
   locale: Locale;
   items: PortfolioItem[];
@@ -16,8 +16,8 @@ export async function PortfolioGrid({
   const studies = await Promise.all(
     items.map(async (item) => ({
       caseStudy: await getCaseStudyBySlug(locale, item.slug),
-      item
-    }))
+      item,
+    })),
   );
 
   return (

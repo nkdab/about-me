@@ -5,7 +5,7 @@ import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { resolveLocale } from "@/shared/config/locales";
 
 export async function generateMetadata({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -17,12 +17,12 @@ export async function generateMetadata({
     description: dictionary.experience.description,
     locale,
     pathname: "/experience",
-    title: dictionary.experience.title
+    title: dictionary.experience.title,
   });
 }
 
 export default async function ExperiencePage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -32,7 +32,10 @@ export default async function ExperiencePage({
   const entries = getExperience(locale);
 
   return (
-    <section aria-label={dictionary.experience.title} className="page-container pb-20 pt-44 md:pb-24 md:pt-40">
+    <section
+      aria-label={dictionary.experience.title}
+      className="page-container pb-20 pt-44 md:pb-24 md:pt-40"
+    >
       <div className="mb-16 max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
           {dictionary.experience.title}

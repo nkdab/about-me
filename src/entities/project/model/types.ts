@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import type { MDXContent } from "mdx/types";
 import type { Locale } from "@/shared/config/locales";
 
 export interface PortfolioItem {
@@ -39,5 +39,5 @@ export interface CaseStudyFrontmatter {
 
 export interface CaseStudy {
   frontmatter: CaseStudyFrontmatter;
-  Component: () => JSX.Element;
+  Component: MDXContent;
 }

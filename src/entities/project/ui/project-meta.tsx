@@ -2,7 +2,7 @@ import { Badge } from "@/shared/ui/badge";
 
 export function ProjectMeta({
   tags,
-  roles
+  roles,
 }: {
   tags: string[];
   roles: string[];

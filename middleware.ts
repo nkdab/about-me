@@ -5,10 +5,10 @@ import { localeCookieName } from "@/shared/i18n/locale-cookie";
 import { detectLocale } from "@/shared/i18n/locale-detect";
 
 export function middleware(request: NextRequest) {
-  const {pathname} = request.nextUrl;
+  const { pathname } = request.nextUrl;
   const locale = detectLocale(
     request.cookies.get(localeCookieName)?.value,
-    request.headers.get("accept-language")
+    request.headers.get("accept-language"),
   );
 
   if (pathname === "/") {
@@ -22,11 +22,11 @@ export function middleware(request: NextRequest) {
 
   return NextResponse.next({
     request: {
-      headers: requestHeaders
-    }
+      headers: requestHeaders,
+    },
   });
 }
 
 export const config = {
-  matcher: ["/", "/(en|ru)/:path*"]
+  matcher: ["/", "/(en|ru)/:path*"],
 };

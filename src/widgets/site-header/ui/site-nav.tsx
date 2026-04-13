@@ -18,30 +18,31 @@ function getNavItems(locale: Locale, dictionary: Dictionary): NavItem[] {
     {
       href: `/${locale}`,
       label: dictionary.nav.home,
-      match: (pathname) => pathname === "/"
+      match: (pathname) => pathname === "/",
     },
     {
       href: `/${locale}/portfolio`,
       label: dictionary.nav.portfolio,
-      match: (pathname) => pathname === "/portfolio" || pathname.startsWith("/portfolio/")
+      match: (pathname) =>
+        pathname === "/portfolio" || pathname.startsWith("/portfolio/"),
     },
     {
       href: `/${locale}/experience`,
       label: dictionary.nav.experience,
-      match: (pathname) => pathname === "/experience"
+      match: (pathname) => pathname === "/experience",
     },
     {
       href: `/${locale}/contact`,
       label: dictionary.nav.contact,
-      match: (pathname) => pathname === "/contact"
-    }
+      match: (pathname) => pathname === "/contact",
+    },
   ];
 }
 
 export function SiteNav({
   locale,
   dictionary,
-  mobile = false
+  mobile = false,
 }: {
   locale: Locale;
   dictionary: Dictionary;
@@ -62,7 +63,7 @@ export function SiteNav({
             className={cn(
               "nav-link",
               active && "text-[var(--foreground)]",
-              mobile && "text-center"
+              mobile && "text-center",
             )}
             href={item.href}
             key={item.href}

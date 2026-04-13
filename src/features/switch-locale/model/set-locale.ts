@@ -10,6 +10,6 @@ export async function setLocale(locale: Locale) {
     maxAge: 60 * 60 * 24 * 365,
     path: "/",
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production"
+    secure: process.env.NODE_ENV === "production",
   });
 }

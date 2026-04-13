@@ -6,12 +6,12 @@ export const defaultLocale: Locale = "en";
 
 export const localeLabels: Record<Locale, string> = {
   en: "English",
-  ru: "Русский"
+  ru: "Русский",
 };
 
 export const localeShortLabels: Record<Locale, string> = {
   en: "EN",
-  ru: "RU"
+  ru: "RU",
 };
 
 export function isLocale(value: string): value is Locale {

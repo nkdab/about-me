@@ -1,7 +1,8 @@
 declare module "*.mdx" {
-  import type { JSX } from "react";
+  import type { CaseStudyFrontmatter } from "@/entities/project/model/types";
+  import type { MDXContent } from "mdx/types";
 
-  const MDXComponent: () => JSX.Element;
-  export const metadata: Record<string, unknown>;
+  const MDXComponent: MDXContent;
+  export const metadata: CaseStudyFrontmatter;
   export default MDXComponent;
 }

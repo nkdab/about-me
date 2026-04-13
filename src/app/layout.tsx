@@ -10,29 +10,32 @@ import { themeCookieName } from "@/shared/config/theme";
 const uiFont = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-ui",
-  weight: ["400", "500", "600", "700", "800"]
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const displayFont = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
   variable: "--font-display",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
-  title: siteConfig.title
+  title: siteConfig.title,
 };
 
 export default async function RootLayout({
-  children
+  children,
 }: Readonly<{ children: React.ReactNode }>) {
   const headerStore = await headers();
   const cookieStore = await cookies();
   const headerLocale = headerStore.get("x-current-locale");
-  const locale = headerLocale && isLocale(headerLocale) ? headerLocale : defaultLocale;
-  const savedTheme = getServerThemePreference(cookieStore.get(themeCookieName)?.value);
+  const locale =
+    headerLocale && isLocale(headerLocale) ? headerLocale : defaultLocale;
+  const savedTheme = getServerThemePreference(
+    cookieStore.get(themeCookieName)?.value,
+  );
   const initialTheme = savedTheme ?? "light";
 
   return (
@@ -50,7 +53,7 @@ export default async function RootLayout({
                 document.documentElement.dataset.theme = theme;
                 document.documentElement.style.colorScheme = theme;
               })();
-            `
+            `,
           }}
         />
         {children}

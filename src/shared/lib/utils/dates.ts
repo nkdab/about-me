@@ -1,14 +1,10 @@
-export function formatMonthRange(
-  start: string,
-  end?: string,
-  locale: string = "en"
-) {
+export function formatMonthRange(start: string, end?: string, locale = "en") {
   const startDate = new Date(start);
   const endDate = end ? new Date(end) : undefined;
 
   const formatter = new Intl.DateTimeFormat(locale, {
     month: "short",
-    year: "numeric"
+    year: "numeric",
   });
 
   const presentLabel = locale === "ru" ? "Сейчас" : "Present";

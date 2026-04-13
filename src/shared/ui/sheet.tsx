@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export function Sheet({
   open,
-  children
+  children,
 }: {
   open: boolean;
   children: ReactNode;

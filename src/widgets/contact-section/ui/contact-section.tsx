@@ -6,7 +6,7 @@ import { ContactForm } from "@/features/send-contact-form/ui/contact-form";
 export function ContactSection({
   dictionary,
   locale,
-  headingLevel = "h2"
+  headingLevel = "h2",
 }: {
   dictionary: Dictionary;
   locale: Locale;
@@ -56,15 +56,21 @@ export function ContactSection({
           </SubHeadingTag>
           <dl className="grid gap-5 text-base sm:grid-cols-3">
             <div>
-              <dt className="text-sm text-[var(--muted)]">{dictionary.contact.locationLabel}</dt>
+              <dt className="text-sm text-[var(--muted)]">
+                {dictionary.contact.locationLabel}
+              </dt>
               <dd>{dictionary.contact.location}</dd>
             </div>
             <div>
-              <dt className="text-sm text-[var(--muted)]">{dictionary.contact.timezoneLabel}</dt>
+              <dt className="text-sm text-[var(--muted)]">
+                {dictionary.contact.timezoneLabel}
+              </dt>
               <dd>{dictionary.contact.timezone}</dd>
             </div>
             <div>
-              <dt className="text-sm text-[var(--muted)]">{dictionary.contact.languagesLabel}</dt>
+              <dt className="text-sm text-[var(--muted)]">
+                {dictionary.contact.languagesLabel}
+              </dt>
               <dd>{dictionary.contact.languages}</dd>
             </div>
           </dl>
@@ -74,22 +80,43 @@ export function ContactSection({
             {dictionary.contact.reachTitle}
           </SubHeadingTag>
           <div className="grid gap-3 text-base">
-            <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={`mailto:${siteConfig.email}`}>
-              <span className="block text-sm text-[var(--muted)]">{dictionary.footer.email}</span>
+            <a
+              className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]"
+              href={`mailto:${siteConfig.email}`}
+            >
+              <span className="block text-sm text-[var(--muted)]">
+                {dictionary.footer.email}
+              </span>
               <span className="subtle-link">{siteConfig.email}</span>
             </a>
-            <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={siteConfig.telegram} rel="noopener noreferrer" target="_blank">
-              <span className="block text-sm text-[var(--muted)]">{dictionary.footer.telegram}</span>
-              <span className="subtle-link">{siteConfig.telegram.replace("https://", "")}</span>
+            <a
+              className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]"
+              href={siteConfig.telegram}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span className="block text-sm text-[var(--muted)]">
+                {dictionary.footer.telegram}
+              </span>
+              <span className="subtle-link">
+                {siteConfig.telegram.replace("https://", "")}
+              </span>
             </a>
-            <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={siteConfig.linkedin} rel="noopener noreferrer" target="_blank">
-              <span className="block text-sm text-[var(--muted)]">{dictionary.footer.linkedin}</span>
-              <span className="subtle-link">{siteConfig.linkedin.replace("https://", "")}</span>
+            <a
+              className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]"
+              href={siteConfig.linkedin}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span className="block text-sm text-[var(--muted)]">
+                {dictionary.footer.linkedin}
+              </span>
+              <span className="subtle-link">
+                {siteConfig.linkedin.replace("https://", "")}
+              </span>
             </a>
           </div>
         </section>
-
-
       </div>
     </section>
   );

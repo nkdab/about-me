@@ -13,32 +13,24 @@ export default function Icon() {
       <div
         style={{
           alignItems: "center",
-          background: "#faf9f7",
+          background: "#3d5a6c",
           border: "1px solid rgba(26, 26, 26, 0.14)",
-          color: "#1a1a1a",
+          borderRadius: "25%",
+          color: "white",
           display: "flex",
           fontFamily: "serif",
-          fontSize: 19,
+          fontSize: 14,
           fontWeight: 700,
           height: "100%",
           justifyContent: "center",
           letterSpacing: 0,
           lineHeight: 1,
+          padding: "3px",
           position: "relative",
           width: "100%",
         }}
       >
-        <div
-          style={{
-            background: "#3d5a6c",
-            bottom: 5,
-            height: 3,
-            left: 7,
-            position: "absolute",
-            width: 18,
-          }}
-        />
-        AI
+        {" { A* } "}
       </div>
     ),
     size,

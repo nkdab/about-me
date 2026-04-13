@@ -4,7 +4,7 @@ import type { Locale } from "@/shared/config/locales";
 
 export function ExperienceTimeline({
   entries,
-  locale
+  locale,
 }: {
   entries: LocalizedExperienceEntry[];
   locale: Locale;

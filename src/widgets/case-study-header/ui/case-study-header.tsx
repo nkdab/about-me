@@ -5,7 +5,7 @@ import type { CaseStudyFrontmatter } from "@/entities/project/model/types";
 
 export function CaseStudyHeader({
   frontmatter,
-  dictionary
+  dictionary,
 }: {
   frontmatter: CaseStudyFrontmatter;
   dictionary: Dictionary;
@@ -17,9 +17,7 @@ export function CaseStudyHeader({
           <p className="kicker text-[var(--accent)]">
             {dictionary.portfolio.title}
           </p>
-          <h1 className="section-title md:text-6xl">
-            {frontmatter.title}
-          </h1>
+          <h1 className="section-title md:text-6xl">{frontmatter.title}</h1>
           <p className="body-copy max-w-xl text-[var(--muted)]">
             {frontmatter.summary}
           </p>

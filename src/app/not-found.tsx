@@ -6,7 +6,8 @@ import { getDictionary } from "@/shared/i18n/get-dictionary";
 export default async function NotFound() {
   const headerStore = await headers();
   const headerLocale = headerStore.get("x-current-locale");
-  const locale = headerLocale && isLocale(headerLocale) ? headerLocale : defaultLocale;
+  const locale =
+    headerLocale && isLocale(headerLocale) ? headerLocale : defaultLocale;
   const dictionary = await getDictionary(locale);
 
   return (

@@ -1,9 +1,9 @@
-import type { JSX } from "react";
+import type { MDXContent } from "mdx/types";
 import type { CaseStudyFrontmatter } from "@/entities/project/model/types";
 import { type Locale, resolveLocale } from "@/shared/config/locales";
 
 interface CaseStudyModule {
-  default: () => JSX.Element;
+  default: MDXContent;
   metadata: CaseStudyFrontmatter;
 }
 
