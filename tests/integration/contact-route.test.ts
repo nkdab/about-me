@@ -8,19 +8,19 @@ const repositoryMocks = vi.hoisted(() => {
 
   return {
     createMessage: vi.fn(async () => ({
-      id: "message-id",
       createdAt: new Date(),
-      locale: "en",
-      name: "Alex",
       email: "alex@example.com",
-      message: "This is a detailed enough message for the validator.",
+      id: "message-id",
       ipHash: "hashed-ip",
-      status: "received",
+      locale: "en",
+      message: "This is a detailed enough message for the validator.",
+      name: "Alex",
       resendMessageId: null,
+      status: "received",
       userAgent: "vitest",
     })),
-    hashIp: vi.fn(() => "hashed-ip"),
     hasMessageStorage: vi.fn(() => false),
+    hashIp: vi.fn(() => "hashed-ip"),
     updateMessageDelivery: vi.fn(),
   };
 });
@@ -45,16 +45,16 @@ vi.mock("@/shared/lib/security/rate-limit", () => ({
 
 function createValidRequest() {
   return new Request("http://localhost/api/contact", {
-    method: "POST",
     body: JSON.stringify({
-      name: "Alex",
-      email: "alex@example.com",
-      message: "This is a detailed enough message for the validator.",
-      company: "",
-      website: "",
-      locale: "en",
       captchaToken: "token",
+      company: "",
+      email: "alex@example.com",
+      locale: "en",
+      message: "This is a detailed enough message for the validator.",
+      name: "Alex",
+      website: "",
     }),
+    method: "POST",
   });
 }
 
@@ -67,8 +67,8 @@ describe("contact route", () => {
   it("rejects invalid payload", async () => {
     const response = await POST(
       new Request("http://localhost/api/contact", {
-        method: "POST",
         body: JSON.stringify({}),
+        method: "POST",
       }),
     );
 
@@ -83,8 +83,8 @@ describe("contact route", () => {
 
     expect(response.status).toBe(500);
     expect(payload).toMatchObject({
-      ok: false,
       code: "STORAGE_FAILED",
+      ok: false,
     });
     expect(repositoryMocks.createMessage).not.toHaveBeenCalled();
   });
@@ -97,8 +97,8 @@ describe("contact route", () => {
 
     expect(response.status).toBe(200);
     expect(payload).toEqual({
-      ok: true,
       messageId: "message-id",
+      ok: true,
     });
     expect(repositoryMocks.createMessage).toHaveBeenCalled();
   });

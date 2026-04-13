@@ -2,7 +2,7 @@ import type { Locale } from "@/shared/config/locales";
 
 export type ContactMessageStatus = "received" | "delivered" | "delivery_failed";
 
-export type ContactMessageRecord = {
+export interface ContactMessageRecord {
   id: string;
   createdAt: Date;
   locale: Locale;
@@ -14,7 +14,7 @@ export type ContactMessageRecord = {
   userAgent?: string | null;
   status: ContactMessageStatus;
   resendMessageId?: string | null;
-};
+}
 
 export type CreateContactMessageInput = Omit<
   ContactMessageRecord,

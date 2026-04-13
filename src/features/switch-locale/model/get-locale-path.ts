@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale, type Locale } from "@/shared/config/locales";
+import { type Locale, defaultLocale, isLocale } from "@/shared/config/locales";
 
 export function getLocalePath({
   pathname,

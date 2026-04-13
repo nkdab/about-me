@@ -31,11 +31,11 @@ export async function generateMetadata({
   }
 
   return buildPageMetadata({
-    locale,
-    title: caseStudy.frontmatter.seo?.title ?? caseStudy.frontmatter.title,
     description:
       caseStudy.frontmatter.seo?.description ?? caseStudy.frontmatter.summary,
-    pathname: `/portfolio/${slug}`
+    locale,
+    pathname: `/portfolio/${slug}`,
+    title: caseStudy.frontmatter.seo?.title ?? caseStudy.frontmatter.title
   });
 }
 

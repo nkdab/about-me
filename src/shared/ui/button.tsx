@@ -1,23 +1,23 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/shared/lib/utils/cn";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-md text-sm font-semibold tracking-[0.02em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
+    defaultVariants: {
+      variant: "primary"
+    },
     variants: {
       variant: {
+        ghost:
+          "px-3 py-2 text-[var(--foreground)] hover:bg-[var(--button-ghost-hover)] focus-visible:ring-[var(--accent)]",
         primary:
           "bg-[var(--button-primary-bg)] px-5 py-3 text-[var(--button-primary-fg)] hover:bg-[var(--button-primary-hover)] focus-visible:ring-[var(--accent)]",
         secondary:
-          "border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-[var(--foreground)] hover:bg-[var(--surface-strong)] focus-visible:ring-[var(--accent)]",
-        ghost:
-          "px-3 py-2 text-[var(--foreground)] hover:bg-[var(--button-ghost-hover)] focus-visible:ring-[var(--accent)]"
+          "border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-[var(--foreground)] hover:bg-[var(--surface-strong)] focus-visible:ring-[var(--accent)]"
       }
-    },
-    defaultVariants: {
-      variant: "primary"
     }
   }
 );

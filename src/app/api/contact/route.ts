@@ -2,16 +2,16 @@ import { headers } from "next/headers";
 import { Resend } from "resend";
 import {
   createMessage,
-  hashIp,
   hasMessageStorage,
+  hashIp,
   updateMessageDelivery,
 } from "@/entities/contact-message/model/repository";
 import { verifyCaptcha } from "@/shared/lib/security/captcha";
 import { isRateLimited } from "@/shared/lib/security/rate-limit";
 import {
-  contactSchema,
   type ContactError,
   type ContactSuccess,
+  contactSchema,
 } from "@/shared/lib/validation/contact";
 
 const resend = process.env.RESEND_API_KEY
@@ -28,18 +28,18 @@ export async function POST(request: Request) {
 
   if (!parsed.success) {
     return json(400, {
-      ok: false,
       code: "INVALID_INPUT",
-      message: "Invalid form payload.",
       fieldErrors: parsed.error.flatten().fieldErrors,
+      message: "Invalid form payload.",
+      ok: false,
     });
   }
 
   if (parsed.data.website) {
     return json(400, {
-      ok: false,
       code: "INVALID_INPUT",
       message: "Invalid form payload.",
+      ok: false,
     });
   }
 
@@ -49,9 +49,9 @@ export async function POST(request: Request) {
 
   if (isRateLimited(ip)) {
     return json(429, {
-      ok: false,
       code: "RATE_LIMITED",
       message: "Too many requests. Try again later.",
+      ok: false,
     });
   }
 
@@ -59,9 +59,9 @@ export async function POST(request: Request) {
 
   if (!captchaValid) {
     return json(400, {
-      ok: false,
       code: "CAPTCHA_FAILED",
       message: "Captcha verification failed.",
+      ok: false,
     });
   }
 
@@ -78,58 +78,58 @@ export async function POST(request: Request) {
 
   if (!deliveryClient && !hasMessageStorage()) {
     return json(500, {
-      ok: false,
       code: "STORAGE_FAILED",
       message: "Contact delivery is not configured.",
+      ok: false,
     });
   }
 
   const record = await createMessage({
-    locale: parsed.data.locale,
-    name: parsed.data.name,
-    email: parsed.data.email,
     company: parsed.data.company || null,
-    message: parsed.data.message,
+    email: parsed.data.email,
     ipHash: hashIp(ip),
+    locale: parsed.data.locale,
+    message: parsed.data.message,
+    name: parsed.data.name,
     userAgent: headerStore.get("user-agent"),
   }).catch(() => null);
 
   if (!record) {
     return json(500, {
-      ok: false,
       code: "STORAGE_FAILED",
       message: "Unable to persist message.",
+      ok: false,
     });
   }
 
   if (!deliveryClient) {
     return json(200, {
-      ok: true,
       messageId: record.id,
+      ok: true,
     });
   }
 
   const { data, error } = await deliveryClient.resend.emails.send({
     from: deliveryClient.resendFrom,
-    to: [deliveryClient.contactTo],
     replyTo: parsed.data.email,
     subject: `Portfolio contact from ${parsed.data.name}`,
     text: parsed.data.message,
+    to: [deliveryClient.contactTo],
   });
 
   if (error) {
     await updateMessageDelivery(record.id, "delivery_failed");
     return json(502, {
-      ok: false,
       code: "DELIVERY_FAILED",
       message: "Email delivery failed.",
+      ok: false,
     });
   }
 
   await updateMessageDelivery(record.id, "delivered", data?.id);
 
   return json(200, {
-    ok: true,
     messageId: record.id,
+    ok: true,
   });
 }

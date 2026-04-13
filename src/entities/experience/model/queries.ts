@@ -3,7 +3,7 @@ import type {
   ExperienceEntry,
   LocalizedExperienceEntry
 } from "@/entities/experience/model/types";
-import { resolveLocale, type Locale } from "@/shared/config/locales";
+import { type Locale, resolveLocale } from "@/shared/config/locales";
 
 export function getExperienceEntries(): ExperienceEntry[] {
   return [...experienceEntries];
@@ -14,8 +14,8 @@ export function getExperience(locale: Locale): LocalizedExperienceEntry[] {
 
   return getExperienceEntries().map((entry) => ({
     ...entry,
+    highlights: entry.highlights[resolvedLocale],
     role: entry.role[resolvedLocale],
-    summary: entry.summary[resolvedLocale],
-    highlights: entry.highlights[resolvedLocale]
+    summary: entry.summary[resolvedLocale]
   }));
 }

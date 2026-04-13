@@ -9,8 +9,8 @@ export async function verifyCaptcha(
   }
 
   const params = new URLSearchParams({
-    secret,
-    response: token
+    response: token,
+    secret
   });
 
   if (remoteIp) {
@@ -18,12 +18,12 @@ export async function verifyCaptcha(
   }
 
   const response = await fetch("https://api.hcaptcha.com/siteverify", {
-    method: "POST",
+    body: params.toString(),
+    cache: "no-store",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: params.toString(),
-    cache: "no-store"
+    method: "POST"
   });
 
   if (!response.ok) {

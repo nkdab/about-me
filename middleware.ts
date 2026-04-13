@@ -5,7 +5,7 @@ import { localeCookieName } from "@/shared/i18n/locale-cookie";
 import { detectLocale } from "@/shared/i18n/locale-detect";
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
+  const {pathname} = request.nextUrl;
   const locale = detectLocale(
     request.cookies.get(localeCookieName)?.value,
     request.headers.get("accept-language")

@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import type { Locale } from "@/shared/config/locales";
 
-export type PortfolioItem = {
+export interface PortfolioItem {
   slug: string;
   year: number;
   status: "shipped" | "live" | "archived" | "concept";
@@ -10,11 +10,11 @@ export type PortfolioItem = {
     live?: string;
     repo?: string;
   };
-  metrics?: Array<{ label: string; value: string }>;
+  metrics?: { label: string; value: string }[];
   order: number;
-};
+}
 
-export type CaseStudyFrontmatter = {
+export interface CaseStudyFrontmatter {
   slug: string;
   locale: Locale;
   title: string;
@@ -35,9 +35,9 @@ export type CaseStudyFrontmatter = {
     title?: string;
     description?: string;
   };
-};
+}
 
-export type CaseStudy = {
+export interface CaseStudy {
   frontmatter: CaseStudyFrontmatter;
   Component: () => JSX.Element;
-};
+}

@@ -1,6 +1,6 @@
 import type { Locale } from "@/shared/config/locales";
 
-export type ExperienceEntry = {
+export interface ExperienceEntry {
   id: string;
   company: string;
   companyUrl?: string;
@@ -13,7 +13,7 @@ export type ExperienceEntry = {
   summary: Record<Locale, string>;
   highlights: Record<Locale, string[]>;
   stack: string[];
-};
+}
 
 export type LocalizedExperienceEntry = Omit<
   ExperienceEntry,

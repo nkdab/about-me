@@ -4,9 +4,9 @@ import { useTransition } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  type Locale,
   localeLabels,
-  localeShortLabels,
-  type Locale
+  localeShortLabels
 } from "@/shared/config/locales";
 import { getLocalePath } from "@/features/switch-locale/model/get-locale-path";
 import { setLocale } from "@/features/switch-locale/model/set-locale";

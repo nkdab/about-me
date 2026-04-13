@@ -10,11 +10,11 @@ export async function submitContact(
   input: ContactFormInput
 ): Promise<ContactSuccess | ContactError> {
   const response = await fetch("/api/contact", {
-    method: "POST",
+    body: JSON.stringify(input),
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(input)
+    method: "POST"
   });
 
   return (await response.json()) as ContactSuccess | ContactError;

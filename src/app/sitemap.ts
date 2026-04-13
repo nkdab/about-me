@@ -9,15 +9,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const pages = locales.flatMap((locale) =>
     staticPaths.map((pathname) => ({
-      url: `${siteConfig.url}/${locale}${pathname}`,
-      lastModified: new Date()
+      lastModified: new Date(),
+      url: `${siteConfig.url}/${locale}${pathname}`
     }))
   );
 
   const caseStudies = locales.flatMap((locale) =>
     slugs.map((slug) => ({
-      url: `${siteConfig.url}/${locale}/portfolio/${slug}`,
-      lastModified: new Date()
+      lastModified: new Date(),
+      url: `${siteConfig.url}/${locale}/portfolio/${slug}`
     }))
   );
 

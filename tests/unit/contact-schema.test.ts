@@ -4,13 +4,13 @@ import { contactSchema } from "@/shared/lib/validation/contact";
 describe("contactSchema", () => {
   it("accepts a valid payload", () => {
     const parsed = contactSchema.safeParse({
-      name: "Alex",
-      email: "alex@example.com",
-      message: "This is a detailed enough message for the validator.",
+      captchaToken: "token",
       company: "",
-      website: "",
+      email: "alex@example.com",
       locale: "en",
-      captchaToken: "token"
+      message: "This is a detailed enough message for the validator.",
+      name: "Alex",
+      website: ""
     });
 
     expect(parsed.success).toBe(true);
@@ -18,11 +18,11 @@ describe("contactSchema", () => {
 
   it("rejects a short message", () => {
     const parsed = contactSchema.safeParse({
-      name: "Alex",
+      captchaToken: "token",
       email: "alex@example.com",
-      message: "short",
       locale: "en",
-      captchaToken: "token"
+      message: "short",
+      name: "Alex"
     });
 
     expect(parsed.success).toBe(false);

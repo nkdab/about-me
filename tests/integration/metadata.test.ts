@@ -4,10 +4,10 @@ import { buildPageMetadata } from "@/shared/lib/seo/metadata";
 describe("buildPageMetadata", () => {
   it("generates localized canonical url", () => {
     const metadata = buildPageMetadata({
-      locale: "ru",
-      title: "Title",
       description: "Description",
+      locale: "ru",
       pathname: "/portfolio",
+      title: "Title",
     });
 
     expect(metadata.alternates?.canonical).toContain("/ru/portfolio");
@@ -15,10 +15,10 @@ describe("buildPageMetadata", () => {
 
   it("generates x-default and social preview metadata", () => {
     const metadata = buildPageMetadata({
-      locale: "en",
-      title: "Title",
       description: "Description",
+      locale: "en",
       pathname: "/portfolio",
+      title: "Title",
     });
 
     expect(metadata.alternates?.languages).toMatchObject({
@@ -26,9 +26,9 @@ describe("buildPageMetadata", () => {
     });
     expect(metadata.openGraph?.images).toEqual([
       expect.objectContaining({
+        height: 630,
         url: expect.stringContaining("/og-image.png"),
         width: 1200,
-        height: 630,
       }),
     ]);
   });

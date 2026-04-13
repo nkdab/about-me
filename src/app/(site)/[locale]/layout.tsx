@@ -5,7 +5,7 @@ import { SiteFooter } from "@/widgets/site-footer/ui/site-footer";
 import { SiteHeader } from "@/widgets/site-header/ui/site-header";
 import { getDictionary } from "@/shared/i18n/get-dictionary";
 import { LocaleDocumentSync } from "@/shared/i18n/locale-document-sync";
-import { isLocale, locales, type Locale } from "@/shared/config/locales";
+import { type Locale, isLocale, locales } from "@/shared/config/locales";
 import { getServerThemePreference } from "@/shared/theme/get-server-theme";
 import { themeCookieName } from "@/shared/config/theme";
 

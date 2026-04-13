@@ -47,10 +47,10 @@ export async function createMessage(
   input: CreateContactMessageInput,
 ): Promise<ContactMessageRecord> {
   const record: ContactMessageRecord = {
-    id: randomUUID(),
     createdAt: new Date(),
-    status: "received",
+    id: randomUUID(),
     resendMessageId: null,
+    status: "received",
     ...input,
   };
 

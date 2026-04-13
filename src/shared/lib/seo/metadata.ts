@@ -32,30 +32,30 @@ export function buildPageMetadata({
   const imageUrl = `${siteConfig.url}${siteConfig.ogImage}`;
 
   return {
-    title,
-    description,
     alternates: buildAlternates(pathname, locale),
+    description,
     openGraph: {
-      title,
       description,
-      url,
-      siteName: siteConfig.name,
       images: [
         {
+          alt: title,
+          height: 630,
           url: imageUrl,
           width: 1200,
-          height: 630,
-          alt: title,
         },
       ],
       locale,
+      siteName: siteConfig.name,
+      title,
       type: "website",
+      url,
     },
+    title,
     twitter: {
       card: "summary_large_image",
-      title,
       description,
       images: [imageUrl],
+      title,
     },
   };
 }

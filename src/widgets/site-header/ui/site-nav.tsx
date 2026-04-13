@@ -7,11 +7,11 @@ import type { Locale } from "@/shared/config/locales";
 import { stripLocale } from "@/features/switch-locale/model/get-locale-path";
 import { cn } from "@/shared/lib/utils/cn";
 
-type NavItem = {
+interface NavItem {
   href: string;
   label: string;
   match: (pathname: string) => boolean;
-};
+}
 
 function getNavItems(locale: Locale, dictionary: Dictionary): NavItem[] {
   return [

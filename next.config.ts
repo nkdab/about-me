@@ -42,19 +42,19 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-  pageExtensions: ["ts", "tsx", "mdx"],
-  images: {
-    remotePatterns: [],
-  },
   async headers() {
     return [
       {
-        source: "/:path*",
         headers: securityHeaders,
+        source: "/:path*",
       },
     ];
   },
+  images: {
+    remotePatterns: [],
+  },
+  output: "standalone",
+  pageExtensions: ["ts", "tsx", "mdx"],
 };
 
 const withMDX = createMDX();

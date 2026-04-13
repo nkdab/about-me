@@ -15,8 +15,8 @@ export async function PortfolioGrid({
 }) {
   const studies = await Promise.all(
     items.map(async (item) => ({
-      item,
-      caseStudy: await getCaseStudyBySlug(locale, item.slug)
+      caseStudy: await getCaseStudyBySlug(locale, item.slug),
+      item
     }))
   );
 

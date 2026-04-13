@@ -1,4 +1,4 @@
-import { defaultLocale, isLocale, type Locale } from "@/shared/config/locales";
+import { type Locale, defaultLocale, isLocale } from "@/shared/config/locales";
 
 function parseAcceptLanguage(acceptLanguage: string) {
   return acceptLanguage
@@ -13,9 +13,9 @@ function parseAcceptLanguage(acceptLanguage: string) {
         : 1;
 
       return {
-        tag: rawTag.toLowerCase(),
-        quality: Number.isFinite(quality) ? quality : 0,
         index,
+        quality: Number.isFinite(quality) ? quality : 0,
+        tag: rawTag.toLowerCase(),
       };
     })
     .filter((entry) => entry.tag && entry.quality > 0)

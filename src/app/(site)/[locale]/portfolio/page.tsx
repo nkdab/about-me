@@ -14,10 +14,10 @@ export async function generateMetadata({
   const dictionary = await getDictionary(locale);
 
   return buildPageMetadata({
-    locale,
-    title: dictionary.portfolio.title,
     description: dictionary.portfolio.description,
+    locale,
     pathname: "/portfolio",
+    title: dictionary.portfolio.title,
   });
 }
 

@@ -2,22 +2,11 @@ import type { ExperienceEntry } from "@/entities/experience/model/types";
 
 export const experienceEntries: ExperienceEntry[] = [
   {
-    id: "group-collective",
     company: "Group Collective",
     companyUrl: "https://group-collective.com/",
-    location: "Remote",
-    employmentType: "full-time",
-    start: "2024-08-01",
-    end: "2026-02-28",
     current: false,
-    role: {
-      en: "Lead Frontend Developer",
-      ru: "Lead Frontend Developer"
-    },
-    summary: {
-      en: "Led frontend development for a reusable CPA network platform and an internal CRM, combining architecture ownership, delivery coordination, and hands-on implementation.",
-      ru: "Руководил фронтенд-разработкой переиспользуемой CPA platform и внутренней CRM: отвечал за архитектуру, координацию delivery и прикладную реализацию."
-    },
+    employmentType: "full-time",
+    end: "2026-02-28",
     highlights: {
       en: [
         "Managed a frontend team of three engineers and handled task decomposition, distribution, and delivery flow.",
@@ -30,25 +19,25 @@ export const experienceEntries: ExperienceEntry[] = [
         "Участвовал в разработке MVP CRM с интеграцией мессенджеров для affiliate-менеджеров."
       ]
     },
-    stack: ["Nuxt", "Vue", "Pinia", "Vite", "TypeScript", "Centrifugo"]
+    id: "group-collective",
+    location: "Remote",
+    role: {
+      en: "Lead Frontend Developer",
+      ru: "Lead Frontend Developer"
+    },
+    stack: ["Nuxt", "Vue", "Pinia", "Vite", "TypeScript", "Centrifugo"],
+    start: "2024-08-01",
+    summary: {
+      en: "Led frontend development for a reusable CPA network platform and an internal CRM, combining architecture ownership, delivery coordination, and hands-on implementation.",
+      ru: "Руководил фронтенд-разработкой переиспользуемой CPA platform и внутренней CRM: отвечал за архитектуру, координацию delivery и прикладную реализацию."
+    }
   },
   {
-    id: "sprintf",
     company: "SprintF",
     companyUrl: "https://sprintf.ru/",
-    location: "Remote",
-    employmentType: "full-time",
-    start: "2020-07-01",
-    end: "2024-07-31",
     current: false,
-    role: {
-      en: "Senior Frontend Developer -> Frontend Team Lead",
-      ru: "Senior Frontend Developer -> Frontend Team Lead"
-    },
-    summary: {
-      en: "Grew from mid-level delivery into lead ownership across insurance, commerce, logistics, fintech, and legacy product streams.",
-      ru: "Вырос от middle-разработчика до lead-роли на проектах в страховании, e-commerce, логистике, финтехе и поддержке legacy-систем."
-    },
+    employmentType: "full-time",
+    end: "2024-07-31",
     highlights: {
       en: [
         "Led frontend development for a maritime logistics platform used by multiple departments across different offices.",
@@ -61,24 +50,24 @@ export const experienceEntries: ExperienceEntry[] = [
         "Реализовал автоматическую SEO-разметку, Open Graph и часть товарной structured data в конструкторе storefront-страниц на GraphQL."
       ]
     },
-    stack: ["React", "Redux Toolkit", "TypeScript", "Nuxt 2", "GraphQL", "Apollo"]
+    id: "sprintf",
+    location: "Remote",
+    role: {
+      en: "Senior Frontend Developer -> Frontend Team Lead",
+      ru: "Senior Frontend Developer -> Frontend Team Lead"
+    },
+    stack: ["React", "Redux Toolkit", "TypeScript", "Nuxt 2", "GraphQL", "Apollo"],
+    start: "2020-07-01",
+    summary: {
+      en: "Grew from mid-level delivery into lead ownership across insurance, commerce, logistics, fintech, and legacy product streams.",
+      ru: "Вырос от middle-разработчика до lead-роли на проектах в страховании, e-commerce, логистике, финтехе и поддержке legacy-систем."
+    }
   },
   {
-    id: "seo-saas-engagement",
     company: "SEO SaaS Engagement",
-    location: "Remote",
-    employmentType: "contract",
-    start: "2023-12-01",
-    end: "2024-03-31",
     current: false,
-    role: {
-      en: "Senior Frontend Developer",
-      ru: "Senior Frontend Developer"
-    },
-    summary: {
-      en: "Modernized a paused SEO SaaS product by extracting the frontend from a monolith and rebuilding it around dedicated APIs.",
-      ru: "Модернизировал paused SEO SaaS-продукт: вынес фронтенд из монолита и пересобрал его вокруг выделенных API."
-    },
+    employmentType: "contract",
+    end: "2024-03-31",
     highlights: {
       en: [
         "Migrated the codebase from Vue 2 to Vue 3 and helped redesign the architecture.",
@@ -91,24 +80,24 @@ export const experienceEntries: ExperienceEntry[] = [
         "Работал как senior frontend engineer в связке с одним middle-разработчиком."
       ]
     },
-    stack: ["Vue 3", "Vite", "Vue Router", "Tailwind CSS", "Testing"]
+    id: "seo-saas-engagement",
+    location: "Remote",
+    role: {
+      en: "Senior Frontend Developer",
+      ru: "Senior Frontend Developer"
+    },
+    stack: ["Vue 3", "Vite", "Vue Router", "Tailwind CSS", "Testing"],
+    start: "2023-12-01",
+    summary: {
+      en: "Modernized a paused SEO SaaS product by extracting the frontend from a monolith and rebuilding it around dedicated APIs.",
+      ru: "Модернизировал paused SEO SaaS-продукт: вынес фронтенд из монолита и пересобрал его вокруг выделенных API."
+    }
   },
   {
-    id: "delivery-studio",
     company: "Product Delivery Studio",
-    location: "Remote",
-    employmentType: "contract",
-    start: "2022-04-01",
-    end: "2022-10-31",
     current: false,
-    role: {
-      en: "Frontend Developer",
-      ru: "Frontend Developer"
-    },
-    summary: {
-      en: "Worked on greenfield product delivery for workforce operations and a streaming marketplace, balancing hands-on implementation with day-to-day ownership.",
-      ru: "Работал над greenfield-продуктами для операционного учета персонала и streaming marketplace, совмещая hands-on разработку с ежедневным ownership."
-    },
+    employmentType: "contract",
+    end: "2022-10-31",
     highlights: {
       en: [
         "Built frontend features for a workforce time-tracking product with QR attendance, timesheet export, and role-based access.",
@@ -121,24 +110,24 @@ export const experienceEntries: ExperienceEntry[] = [
         "Работал в очень маленьком реальном frontend-составе как senior frontend engineer плюс один junior-разработчик."
       ]
     },
-    stack: ["VueJS", "NuxtJS", "Vuex", "GRPC"]
-  },
-  {
-    id: "freelance",
-    company: "Freelance",
-    location: "Tyumen / Remote",
-    employmentType: "freelance",
-    start: "2019-01-01",
-    end: "2021-06-30",
-    current: false,
+    id: "delivery-studio",
+    location: "Remote",
     role: {
       en: "Frontend Developer",
       ru: "Frontend Developer"
     },
+    stack: ["VueJS", "NuxtJS", "Vuex", "GRPC"],
+    start: "2022-04-01",
     summary: {
-      en: "Delivered small commercial and local projects that formed the base for later product, architecture, and client-facing work.",
-      ru: "Делал небольшие коммерческие и локальные проекты, на которых сформировалась база для дальнейшей продуктовой, архитектурной и клиентской работы."
-    },
+      en: "Worked on greenfield product delivery for workforce operations and a streaming marketplace, balancing hands-on implementation with day-to-day ownership.",
+      ru: "Работал над greenfield-продуктами для операционного учета персонала и streaming marketplace, совмещая hands-on разработку с ежедневным ownership."
+    }
+  },
+  {
+    company: "Freelance",
+    current: false,
+    employmentType: "freelance",
+    end: "2021-06-30",
     highlights: {
       en: [
         "Worked on projects for small businesses, educational organizations, and local clients.",
@@ -149,6 +138,17 @@ export const experienceEntries: ExperienceEntry[] = [
         "Набрал практический опыт коммерческой frontend-разработки до перехода в более крупные продуктовые среды."
       ]
     },
-    stack: ["HTML", "CSS", "JavaScript", "jQuery", "Vue", "Nuxt"]
+    id: "freelance",
+    location: "Tyumen / Remote",
+    role: {
+      en: "Frontend Developer",
+      ru: "Frontend Developer"
+    },
+    stack: ["HTML", "CSS", "JavaScript", "jQuery", "Vue", "Nuxt"],
+    start: "2019-01-01",
+    summary: {
+      en: "Delivered small commercial and local projects that formed the base for later product, architecture, and client-facing work.",
+      ru: "Делал небольшие коммерческие и локальные проекты, на которых сформировалась база для дальнейшей продуктовой, архитектурной и клиентской работы."
+    }
   }
 ];

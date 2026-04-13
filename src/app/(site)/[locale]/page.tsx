@@ -17,10 +17,10 @@ export async function generateMetadata({
   const dictionary = await getDictionary(locale);
 
   return buildPageMetadata({
-    locale,
-    title: dictionary.seo.siteTitle,
     description: dictionary.seo.siteDescription,
+    locale,
     pathname: "",
+    title: dictionary.seo.siteTitle,
   });
 }
 

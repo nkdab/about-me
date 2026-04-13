@@ -44,50 +44,52 @@ export function ContactSection({
               {dictionary.contact.availabilityDetails}
             </p>
           </section>
-
-          <section>
-            <SubHeadingTag className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
-              {dictionary.contact.reachTitle}
-            </SubHeadingTag>
-            <div className="grid gap-3 text-base">
-              <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={`mailto:${siteConfig.email}`}>
-                <span className="block text-sm text-[var(--muted)]">{dictionary.footer.email}</span>
-                <span className="subtle-link">{siteConfig.email}</span>
-              </a>
-              <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={siteConfig.telegram} rel="noopener noreferrer" target="_blank">
-                <span className="block text-sm text-[var(--muted)]">{dictionary.footer.telegram}</span>
-                <span className="subtle-link">{siteConfig.telegram.replace("https://", "")}</span>
-              </a>
-              <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={siteConfig.linkedin} rel="noopener noreferrer" target="_blank">
-                <span className="block text-sm text-[var(--muted)]">{dictionary.footer.linkedin}</span>
-                <span className="subtle-link">{siteConfig.linkedin.replace("https://", "")}</span>
-              </a>
-            </div>
-          </section>
-
-          <section className="border-t border-[var(--border)] pt-8">
-            <SubHeadingTag className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
-              {dictionary.contact.locationTitle}
-            </SubHeadingTag>
-            <dl className="grid gap-5 text-base sm:grid-cols-3">
-              <div>
-                <dt className="text-sm text-[var(--muted)]">{dictionary.contact.locationLabel}</dt>
-                <dd>{dictionary.contact.location}</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-[var(--muted)]">{dictionary.contact.timezoneLabel}</dt>
-                <dd>{dictionary.contact.timezone}</dd>
-              </div>
-              <div>
-                <dt className="text-sm text-[var(--muted)]">{dictionary.contact.languagesLabel}</dt>
-                <dd>{dictionary.contact.languages}</dd>
-              </div>
-            </dl>
-          </section>
         </div>
         <div id="contact-form">
           <ContactForm dictionary={dictionary} locale={locale} />
         </div>
+      </div>
+      <div className="w-full grid grid-cols-2 gap-10 pt-8 border-t border-[var(--border)]">
+        <section>
+          <SubHeadingTag className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            {dictionary.contact.locationTitle}
+          </SubHeadingTag>
+          <dl className="grid gap-5 text-base sm:grid-cols-3">
+            <div>
+              <dt className="text-sm text-[var(--muted)]">{dictionary.contact.locationLabel}</dt>
+              <dd>{dictionary.contact.location}</dd>
+            </div>
+            <div>
+              <dt className="text-sm text-[var(--muted)]">{dictionary.contact.timezoneLabel}</dt>
+              <dd>{dictionary.contact.timezone}</dd>
+            </div>
+            <div>
+              <dt className="text-sm text-[var(--muted)]">{dictionary.contact.languagesLabel}</dt>
+              <dd>{dictionary.contact.languages}</dd>
+            </div>
+          </dl>
+        </section>
+        <section>
+          <SubHeadingTag className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            {dictionary.contact.reachTitle}
+          </SubHeadingTag>
+          <div className="grid gap-3 text-base">
+            <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={`mailto:${siteConfig.email}`}>
+              <span className="block text-sm text-[var(--muted)]">{dictionary.footer.email}</span>
+              <span className="subtle-link">{siteConfig.email}</span>
+            </a>
+            <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={siteConfig.telegram} rel="noopener noreferrer" target="_blank">
+              <span className="block text-sm text-[var(--muted)]">{dictionary.footer.telegram}</span>
+              <span className="subtle-link">{siteConfig.telegram.replace("https://", "")}</span>
+            </a>
+            <a className="rounded-md border border-[var(--border)] px-4 py-3 transition-colors hover:bg-[var(--surface-tint)]" href={siteConfig.linkedin} rel="noopener noreferrer" target="_blank">
+              <span className="block text-sm text-[var(--muted)]">{dictionary.footer.linkedin}</span>
+              <span className="subtle-link">{siteConfig.linkedin.replace("https://", "")}</span>
+            </a>
+          </div>
+        </section>
+
+
       </div>
     </section>
   );

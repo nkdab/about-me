@@ -13,14 +13,14 @@ const components: MDXComponents = {
       {...props}
     />
   ),
+  li: (props) => <li className="leading-7" {...props} />,
   p: (props) => (
     <p
       className="mt-4 text-base leading-8 text-[var(--muted)] first:mt-0"
       {...props}
     />
   ),
-  ul: (props) => <ul className="mt-5 list-disc space-y-2 pl-6 text-[var(--muted)]" {...props} />,
-  li: (props) => <li className="leading-7" {...props} />
+  ul: (props) => <ul className="mt-5 list-disc space-y-2 pl-6 text-[var(--muted)]" {...props} />
 };
 
 export function useMDXComponents(): MDXComponents {

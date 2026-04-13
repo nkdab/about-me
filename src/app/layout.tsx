@@ -20,9 +20,9 @@ const displayFont = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
-  title: siteConfig.title,
-  description: siteConfig.description
+  title: siteConfig.title
 };
 
 export default async function RootLayout({

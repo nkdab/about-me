@@ -10,13 +10,13 @@ import { Textarea } from "@/shared/ui/textarea";
 import type { Dictionary } from "@/shared/i18n/get-dictionary";
 import type { Locale } from "@/shared/config/locales";
 import {
-  contactSchema,
   type ContactFormInput,
+  contactSchema,
 } from "@/shared/lib/validation/contact";
 import { submitContact } from "@/features/send-contact-form/model/submit-contact";
 
 function getErrorMessage(value: unknown) {
-  if (typeof value === "string") return value;
+  if (typeof value === "string") {return value;}
   return value instanceof Error ? value.message : undefined;
 }
 
@@ -43,9 +43,9 @@ export function ContactForm({
     reset,
   } = useForm<ContactFormInput>({
     defaultValues: {
-      locale,
       captchaToken: devCaptchaToken,
       company: "",
+      locale,
       website: "",
     },
   });
@@ -65,13 +65,13 @@ export function ContactForm({
       const result = await submitContact(parsed.data);
       if (result.ok) {
         reset({
-          name: "",
-          email: "",
-          message: "",
           captchaToken: devCaptchaToken,
           company: "",
-          website: "",
+          email: "",
           locale,
+          message: "",
+          name: "",
+          website: "",
         });
         captchaRef.current?.resetCaptcha();
         setStatus(dictionary.contact.success);

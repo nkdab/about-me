@@ -7,7 +7,7 @@ import {
   getCaseStudyImporter,
   getRegisteredProjectSlugs
 } from "@/entities/project/model/registry";
-import { locales, type Locale } from "@/shared/config/locales";
+import { type Locale, locales } from "@/shared/config/locales";
 
 export function getPortfolioItems(): PortfolioItem[] {
   return portfolioItems.toSorted((left, right) => left.order - right.order);
@@ -44,8 +44,8 @@ export async function getCaseStudyBySlug(
   }
 
   return {
-    frontmatter: module.metadata,
-    Component: module.default
+    Component: module.default,
+    frontmatter: module.metadata
   };
 }
 
@@ -60,8 +60,8 @@ export async function getAllCaseStudies(locale: Locale): Promise<CaseStudy[]> {
 export async function getProjectAlternates(slug: string) {
   const result = await Promise.all(
     locales.map(async (locale) => ({
-      locale,
-      caseStudy: await getCaseStudyBySlug(locale, slug)
+      caseStudy: await getCaseStudyBySlug(locale, slug),
+      locale
     }))
   );
 
