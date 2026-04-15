@@ -2,7 +2,7 @@
 
 Case studies are authored as one MDX file per locale under `src/content/case-studies/{locale}`.
 
-Required frontmatter:
+Required `export const metadata` fields:
 
 - `slug`
 - `locale`
@@ -15,4 +15,6 @@ Required frontmatter:
 - `roles`
 - `cover`
 
-Slugs must match across locales. All images require meaningful alt text.
+Slugs must match across locales. Metadata must match the file path: `metadata.slug` matches the filename and `metadata.locale` matches the locale folder.
+
+All images require meaningful alt text. MDX body images should use standard `<img>` syntax with `src`, `alt`, `width`, and `height`; the global MDX component map renders them through `next/image`.

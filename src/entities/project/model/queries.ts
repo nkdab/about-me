@@ -4,6 +4,7 @@ import {
   getCaseStudyImporter,
   getRegisteredProjectSlugs,
 } from "@/entities/project/model/registry";
+import { caseStudyFrontmatterSchema } from "@/entities/project/model/schema";
 import { type Locale, locales } from "@/shared/config/locales";
 
 export function getPortfolioItems(): PortfolioItem[] {
@@ -40,9 +41,17 @@ export async function getCaseStudyBySlug(
     return null;
   }
 
+  const frontmatter = caseStudyFrontmatterSchema.parse(module.metadata);
+
+  if (frontmatter.locale !== locale || frontmatter.slug !== slug) {
+    throw new Error(
+      `Invalid case study metadata for ${locale}/${slug}: got ${frontmatter.locale}/${frontmatter.slug}`,
+    );
+  }
+
   return {
     Component: module.default,
-    frontmatter: module.metadata,
+    frontmatter,
   };
 }
 

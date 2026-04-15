@@ -60,11 +60,7 @@ export function SiteNav({
         return (
           <Link
             aria-current={active ? "page" : undefined}
-            className={cn(
-              "nav-link",
-              active && "text-[var(--foreground)]",
-              mobile && "text-center",
-            )}
+            className={cn("nav-link", mobile && "text-center")}
             href={item.href}
             key={item.href}
           >

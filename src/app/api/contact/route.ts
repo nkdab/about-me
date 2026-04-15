@@ -109,10 +109,15 @@ export async function POST(request: Request) {
     });
   }
 
+  const sanitizeHeader = (value: string) =>
+    value.replace(/[\r\n]+/g, " ").trim();
+  const safeName = sanitizeHeader(parsed.data.name).slice(0, 200);
+  const safeReplyTo = sanitizeHeader(parsed.data.email);
+
   const { data, error } = await deliveryClient.resend.emails.send({
     from: deliveryClient.resendFrom,
-    replyTo: parsed.data.email,
-    subject: `Portfolio contact from ${parsed.data.name}`,
+    replyTo: safeReplyTo,
+    subject: `Portfolio contact from ${safeName}`,
     text: parsed.data.message,
     to: [deliveryClient.contactTo],
   });

@@ -17,16 +17,16 @@ export function SiteHeader({
   initialTheme: ThemePreference;
 }) {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-[var(--border)] bg-[var(--chrome-surface)] backdrop-blur-sm">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-(--border) bg-(--chrome-surface) backdrop-blur-sm">
       <div className="page-container flex flex-col gap-4 py-4 md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8">
         <div className="flex items-center justify-between gap-3 md:block">
           <Link
-            className="display-font text-xl font-medium leading-none text-[var(--foreground)] transition-opacity hover:opacity-60"
+            className="display-font text-2xl font-medium leading-none text-(--foreground) transition-opacity hover:opacity-60"
             href={`/${locale}`}
           >
             {siteConfig.name}
           </Link>
-          <div className="flex items-center gap-3 border-l border-[var(--border)] pl-4 md:hidden">
+          <div className="flex items-center gap-3 border-l border-(--border) pl-4 md:hidden">
             <ThemeSwitcher
               dictionary={dictionary}
               initialTheme={initialTheme}

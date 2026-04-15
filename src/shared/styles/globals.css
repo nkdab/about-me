@@ -77,7 +77,7 @@ a {
   text-underline-offset: 0.14em;
 }
 
-a:not([class*="inline-flex"]) {
+a:not([class]) {
   color: inherit;
 }
 
@@ -104,7 +104,7 @@ button,
 a,
 input,
 textarea {
-  font: inherit;
+  font-family: inherit;
 }
 
 :focus-visible {
@@ -167,7 +167,9 @@ textarea {
 }
 
 .nav-link:hover,
-.nav-link:focus-visible {
+.nav-link:focus-visible,
+.nav-link:active,
+.nav-link[aria-current="page"] {
   color: var(--foreground);
 }
 

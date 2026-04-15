@@ -1,49 +1,51 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { MDXContent } from "mdx/types";
 import type { CaseStudyFrontmatter } from "@/entities/project/model/types";
-import { type Locale, resolveLocale } from "@/shared/config/locales";
+import {
+  type Locale,
+  locales,
+  resolveLocale,
+} from "@/shared/config/locales";
 
 interface CaseStudyModule {
   default: MDXContent;
   metadata: CaseStudyFrontmatter;
 }
 
-type Importer = () => Promise<CaseStudyModule>;
+const CONTENT_ROOT = path.join(
+  process.cwd(),
+  "src",
+  "content",
+  "case-studies",
+);
 
-const caseStudyImports: Record<Locale, Record<string, Importer>> = {
-  en: {
-    "cpa-network-platform": () =>
-      import("@/content/case-studies/en/cpa-network-platform.mdx") as Promise<CaseStudyModule>,
-    "insurance-self-service-product": () =>
-      import("@/content/case-studies/en/insurance-self-service-product.mdx") as Promise<CaseStudyModule>,
-    "maritime-logistics-platform": () =>
-      import("@/content/case-studies/en/maritime-logistics-platform.mdx") as Promise<CaseStudyModule>,
-    "platform-redesign": () =>
-      import("@/content/case-studies/en/platform-redesign.mdx") as Promise<CaseStudyModule>,
-    "seo-platform-modernization": () =>
-      import("@/content/case-studies/en/seo-platform-modernization.mdx") as Promise<CaseStudyModule>,
-    "seo-storefront-builder": () =>
-      import("@/content/case-studies/en/seo-storefront-builder.mdx") as Promise<CaseStudyModule>,
-  },
-  ru: {
-    "cpa-network-platform": () =>
-      import("@/content/case-studies/ru/cpa-network-platform.mdx") as Promise<CaseStudyModule>,
-    "insurance-self-service-product": () =>
-      import("@/content/case-studies/ru/insurance-self-service-product.mdx") as Promise<CaseStudyModule>,
-    "maritime-logistics-platform": () =>
-      import("@/content/case-studies/ru/maritime-logistics-platform.mdx") as Promise<CaseStudyModule>,
-    "platform-redesign": () =>
-      import("@/content/case-studies/ru/platform-redesign.mdx") as Promise<CaseStudyModule>,
-    "seo-platform-modernization": () =>
-      import("@/content/case-studies/ru/seo-platform-modernization.mdx") as Promise<CaseStudyModule>,
-    "seo-storefront-builder": () =>
-      import("@/content/case-studies/ru/seo-storefront-builder.mdx") as Promise<CaseStudyModule>,
-  },
-};
+function discoverSlugs(locale: Locale): string[] {
+  const dir = path.join(CONTENT_ROOT, locale);
+  return fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => file.slice(0, -".mdx".length))
+    .toSorted();
+}
 
-export function getRegisteredProjectSlugs() {
-  return Object.keys(caseStudyImports.en);
+const slugsByLocale: Record<Locale, Set<string>> = Object.fromEntries(
+  locales.map((locale) => [locale, new Set(discoverSlugs(locale))]),
+) as Record<Locale, Set<string>>;
+
+export function getRegisteredProjectSlugs(): string[] {
+  return [...slugsByLocale[locales[0]]];
 }
 
 export function getCaseStudyImporter(locale: string | undefined, slug: string) {
-  return caseStudyImports[resolveLocale(locale)]?.[slug];
+  const resolved = resolveLocale(locale);
+
+  if (!slugsByLocale[resolved].has(slug)) {
+    return undefined;
+  }
+
+  return () =>
+    import(
+      `../../../content/case-studies/${resolved}/${slug}.mdx`
+    ) as Promise<CaseStudyModule>;
 }

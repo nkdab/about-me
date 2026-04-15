@@ -1,5 +1,7 @@
 import type { MDXContent } from "mdx/types";
 import type { Locale } from "@/shared/config/locales";
+import type { z } from "zod";
+import type { caseStudyFrontmatterSchema } from "@/entities/project/model/schema";
 
 export interface PortfolioItem {
   slug: string;
@@ -14,28 +16,11 @@ export interface PortfolioItem {
   order: number;
 }
 
-export interface CaseStudyFrontmatter {
-  slug: string;
+export type CaseStudyFrontmatter = z.infer<
+  typeof caseStudyFrontmatterSchema
+> & {
   locale: Locale;
-  title: string;
-  summary: string;
-  excerpt: string;
-  publishedAt: string;
-  updatedAt?: string;
-  featured: boolean;
-  tags: string[];
-  roles: string[];
-  cover: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
-  seo?: {
-    title?: string;
-    description?: string;
-  };
-}
+};
 
 export interface CaseStudy {
   frontmatter: CaseStudyFrontmatter;

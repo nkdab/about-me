@@ -8,7 +8,8 @@
       "WebFetch(domain:www.figma.com)",
       "mcp__mcp-registry__search_mcp_registry",
       "WebFetch(domain:figma.com)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(wc -l /Users/aleksandrivanov/workspace/portfolio/src/shared/i18n/dictionaries/*.json)"
     ]
   }
 }
