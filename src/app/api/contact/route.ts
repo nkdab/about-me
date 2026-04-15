@@ -22,6 +22,10 @@ function json(status: number, payload: ContactSuccess | ContactError) {
   return Response.json(payload, { status });
 }
 
+function sanitizeHeader(value: string) {
+  return value.replace(/[\r\n]+/g, " ").trim();
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const parsed = contactSchema.safeParse(body);
@@ -109,8 +113,6 @@ export async function POST(request: Request) {
     });
   }
 
-  const sanitizeHeader = (value: string) =>
-    value.replace(/[\r\n]+/g, " ").trim();
   const safeName = sanitizeHeader(parsed.data.name).slice(0, 200);
   const safeReplyTo = sanitizeHeader(parsed.data.email);
 
